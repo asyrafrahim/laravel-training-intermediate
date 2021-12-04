@@ -39,10 +39,10 @@
                         <tbody>
                             @foreach ($schedules as $schedule)
                             <tr>
-                                <td>{{$schedule->id}}</td>
-                                <td>{{$schedule->title}}</td>
-                                <td>{{$schedule->description}}</td>
-                                <td>{{ $schedule->pengguna->name }} - {{ $schedule->pengguna->email }}</td>
+                                <td>{{ $schedule->id }}</td>
+                                <td>{{ $schedule->title }}</td>
+                                <td>{{ $schedule->description }}</td>
+                                <td>{{ $schedule->user->name }} - {{ $schedule->user->email }}</td>
                                 <td>
                                     <a href="{{ route('schedule:show', $schedule) }}" class="btn btn-primary">Show</a>
                                     <a href="{{ route('schedule:edit', $schedule) }}" class="btn btn-success">Edit</a>

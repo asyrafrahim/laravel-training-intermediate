@@ -8,7 +8,7 @@ class ScheduleController extends Controller
 {
     public function index(Request $request)
     {
-        $schedules = Schedule::all();
+        $schedules = $user->schedules()->paginate(2);
         return view('schedules.index', compact('schedules'));
     }
 
