@@ -8,6 +8,7 @@ class ScheduleController extends Controller
 {
     public function index(Request $request)
     {
+        $user = auth()->user();
         $schedules = $user->schedules()->paginate(2);
         return view('schedules.index', compact('schedules'));
     }

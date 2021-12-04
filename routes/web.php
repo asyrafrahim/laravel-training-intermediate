@@ -20,3 +20,14 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/schedules', [App\Http\Controllers\ScheduleController::class, 'index'])->name('schedule:index')->middleware('auth');
+
+Route::get('/schedules/create', [App\Http\Controllers\ScheduleController::class, 'create'])->name('schedule:create');
+Route::post('/schedules/create', [App\Http\Controllers\ScheduleController::class, 'store'])->name('schedule:store');
+
+Route::get('/schedules/{schedule}', [App\Http\Controllers\ScheduleController::class, 'show'])->name('schedule:show');
+Route::get('/schedules/{schedule}/edit', [App\Http\Controllers\ScheduleController::class, 'edit'])->name('schedule:edit');
+Route::post('/schedules/{schedule}/edit', [App\Http\Controllers\ScheduleController::class, 'update'])->name('schedule:update');
+Route::get('/schedules/{schedule}/destroy', [App\Http\Controllers\ScheduleController::class, 'destroy'])->name('schedule:destroy');
+Route::get('/schedules/{schedule}/force-destroy', [App\Http\Controllers\ScheduleController::class, 'forceDestroy'])->name('schedule:force-destroy');
