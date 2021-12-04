@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Schedule Edit') }}</div>
+                <div class="card-header">{{ __('Edit Schedule') }}</div>
 
                 <div class="card-body">
                     <form action="{{ route('schedule:update', $schedule) }}" method="POST">

@@ -14,7 +14,7 @@
                 </div>
             @endif
             <div class="card">
-                <div class="card-header">{{ __('Schedule Create') }}</div>
+                <div class="card-header">{{ __('Create New Schedule') }}</div>
 
                 <div class="card-body">
                     <form action="{{ route('schedule:store') }}" method="POST" enctype="multipart/form-data">

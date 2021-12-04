@@ -2,10 +2,7 @@
 
 @section('content')
 <div class="container-fluid px-4">
-    <h1 class="mt-4">Schedule Index</h1>
-    <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item active">Schedule</li>
-    </ol>
+ 
     <div class="row">
         <div class="col-md-12">
             @if(session()->has('alert'))
@@ -14,16 +11,18 @@
             </div>
             @endif
             <div class="card">
-                <div class="card-header">{{ __('Schedule Index') }}
-                    <div class="float-right">
+                <div class="card-header">
+                    <div class="float-end">
                         <form action="" method="">
                             <div class="input-group">
                                 <input type="text" class="form-control" name="keyword" value="{{ request()->get('keyword')}}"/>
                                 <div class="input-group-append">
                                     <button class="btn btn-primary" type="submit">Search</button>
                                 </div>
+                                <a href="{{ route('schedule:create') }}" class="btn btn-primary">+ Create New Schedule </a>
                             </div>
                         </form>
+                        
                     </div>
                 </div>
                 
@@ -33,7 +32,7 @@
                             <th>ID</th>
                             <th>Title</th>
                             <th>Description</th>
-                            <th>User (Creator)</th>
+                            <th>Creator</th>
                             <th>Actions</th>
                         </thead>
                         <tbody>
