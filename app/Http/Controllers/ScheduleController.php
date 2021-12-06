@@ -44,7 +44,7 @@ class ScheduleController extends Controller
     {
         $request->validate([
             'title' => 'required|min:5',
-            'description' => 'required|min:100',
+            'description' => 'required|min:10',
         ],[
             'title.required' => 'Wajib isi tajuk',
             'description.required' => 'Wajib isi description',

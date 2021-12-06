@@ -18,6 +18,7 @@ class CreateSchedulesTable extends Migration
             $table->string('title')->nullable();
             $table->text('description')->nullable();
             $table->foreignId('user_id')->constrained('users');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

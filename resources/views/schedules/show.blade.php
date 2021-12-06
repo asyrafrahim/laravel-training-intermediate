@@ -28,6 +28,9 @@
                             </a>
                         </div>
                     @endif
+                    <div class="form-group">
+                        <a class="btn btn-link" href="{{ route('schedule:index') }}">Back</a>
+                    </div>
                 </div>
             </div>
         </div>
