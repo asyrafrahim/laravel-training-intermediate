@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('admin.layouts.main')
 
 @section('content')
 <div class="container-fluid px-4">
@@ -15,9 +15,10 @@
                     <div class="float-start">
                         <form action="" method="">
                             <div class="input-group">
-                                <input type="text" class="form-control" name="keyword" value="{{ request()->get('keyword')}}"/>
+                                <input type="text" class="form-control" name="keyword" value="{{ request()->get('keyword')}}"
+                                placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch"/>
                                 <div class="input-group-append">
-                                    <button class="btn btn-primary" type="submit">Search</button>
+                                    <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
                                 </div>
                                 
                             </div>
