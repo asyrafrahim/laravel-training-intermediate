@@ -69,11 +69,15 @@ class ScheduleController extends Controller
     
     public function show(Schedule $schedule)
     {
+        $this->authorize('show', $schedule);
+        
         return view('schedules.show', compact('schedule'));
     }
     
     public function edit(Schedule $schedule)
     {
+        $this->authorize('edit', $schedule);
+        
         return view('schedules.edit', compact('schedule'));
     }
     
@@ -91,6 +95,8 @@ class ScheduleController extends Controller
     
     public function destroy(Schedule $schedule)
     {
+        $this->authorize('delete', $schedule);
+        
         if($schedule->attachment){
             Storage::disk('public')->delete($schedule->attachment);
         }
@@ -105,6 +111,8 @@ class ScheduleController extends Controller
     
     public function forceDestroy(Schedule $schedule)
     {
+        $this->authorize('delete', $schedule);
+        
         $schedule->forceDelete();
         
         return redirect()->route('schedule:index')->with([
