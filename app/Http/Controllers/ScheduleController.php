@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Storage;
 
 class ScheduleController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', 'admin');
+    }
+    
     public function index(Request $request)
     {
         if($request->keyword){
