@@ -68,6 +68,7 @@ class ScheduleController extends Controller
         }
 
         Mail::to('your@email.com')->send(new ScheduleCreated($schedule));
+        dispatch(new SendEmailJob($schedule));
 
         return redirect()
         ->route('schedule:index')
