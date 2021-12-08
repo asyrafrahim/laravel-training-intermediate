@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Schedule;
+use App\Jobs\SendEmailJob;
 use Illuminate\Http\Request;
 use App\Mail\ScheduleCreated;
 use Illuminate\Support\Facades\File;
