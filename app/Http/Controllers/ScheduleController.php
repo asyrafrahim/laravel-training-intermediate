@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Schedule;
 use Illuminate\Http\Request;
+use App\Mail\ScheduleCreated;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -12,7 +14,7 @@ class ScheduleController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth', 'admin']);
+        $this->middleware('auth');
     }
     
     public function index(Request $request)
@@ -64,6 +66,9 @@ class ScheduleController extends Controller
             $schedule->attachment = $filename;
             $schedule->save();
         }
+
+        Mail::to('your@email.com')->send(new ScheduleCreated($schedule));
+
         return redirect()
         ->route('schedule:index')
         ->with([
